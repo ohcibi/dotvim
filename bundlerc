@@ -1,0 +1,89 @@
+Plugin 'gmarik/vundle'
+
+Plugin 'tpope/vim-git'
+Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-abolish'
+Plugin 'tpope/vim-cucumber'
+Plugin 'tpope/vim-rails'
+Plugin 'tpope/vim-haml'
+Plugin 'tpope/vim-markdown'
+Plugin 'tpope/vim-vinegar'
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'Shougo/neocomplete.vim'
+Plugin 'Shougo/neosnippet'
+Plugin 'Shougo/neosnippet-snippets'
+Plugin 'honza/vim-snippets'
+Plugin 'honza/vim-clojure-conceal'
+Plugin 'kien/ctrlp.vim'
+
+Plugin 'scrooloose/syntastic'
+Plugin 'mattn/webapi-vim'
+Plugin 'mattn/gist-vim'
+Plugin 'mattn/emmet-vim'
+Plugin 'scrooloose/nerdcommenter'
+Plugin 'godlygeek/tabular'
+
+Plugin 'leshill/vim-json'
+Plugin 'pangloss/vim-javascript'
+Plugin 'briancollins/vim-jst'
+Plugin 'kchmck/vim-coffee-script'
+
+Plugin 'hail2u/vim-css3-syntax'
+Plugin 'cakebaker/scss-syntax.vim'
+
+Plugin 'ervandew/supertab'
+
+Plugin 'nathanaelkane/vim-indent-guides'
+
+Plugin 'bling/vim-airline'
+Plugin 'bling/vim-bufferline'
+
+Plugin 'mustache/vim-mustache-handlebars'
+
+Plugin 'adimit/prolog.vim'
+
+Plugin 'airblade/vim-gitgutter'
+
+Plugin 'derekwyatt/vim-scala'
+
+Plugin 'html5.vim'
+Plugin 'bufkill.vim'
+Plugin 'LustyJuggler'
+Plugin 'gnupg.vim'
+
+Plugin 'LaTeX-Box-Team/LaTeX-Box'
+
+Plugin 'guns/vim-clojure-static'
+Plugin 'tpope/vim-fireplace'
+Plugin 'tpope/vim-classpath'
+Plugin 'vim-scripts/paredit.vim'
+
+Plugin 'kien/rainbow_parentheses.vim'
+
+Plugin 'isnowfy/python-vim-instant-markdown'
+
+Plugin 'alfredodeza/pytest.vim'
+
+Plugin 'klen/python-mode'
+
+Plugin 'flazz/vim-colorschemes'
+Plugin 'ScrollColors'
+
+Plugin 'Lokaltog/vim-easymotion'
+
+Plugin 'AndrewRadev/vim-eco'
+
+Plugin 'mileszs/ack.vim'
+
+Plugin 'vim-scripts/groovy.vim'
+
+Plugin 'thinca/vim-quickrun'
+Plugin 'tyru/open-browser.vim'
+Plugin 'superbrothers/vim-quickrun-markdown-gfm'
+
+Plugin 'edkolev/tmuxline.vim'
+
+Plugin 'ap/vim-css-color'
+
+Plugin 'heartsentwined/vim-emblem'

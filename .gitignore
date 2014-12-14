@@ -1,0 +1,10 @@
+# vim
+/bundle/
+/views/
+/backup
+/undo/
+/spell/
+/dein/
+/vimrc.local.d/
+
+.netrwhist
