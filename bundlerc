@@ -87,3 +87,5 @@ Plugin 'edkolev/tmuxline.vim'
 Plugin 'ap/vim-css-color'
 
 Plugin 'heartsentwined/vim-emblem'
+
+Plugin 'christoomey/vim-tmux-navigator'
