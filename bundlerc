@@ -59,7 +59,7 @@ Plugin 'tpope/vim-fireplace'
 Plugin 'tpope/vim-classpath'
 Plugin 'vim-scripts/paredit.vim'
 
-Plugin 'kien/rainbow_parentheses.vim'
+Plugin 'luochen1990/rainbow'
 
 Plugin 'isnowfy/python-vim-instant-markdown'
 
@@ -89,3 +89,7 @@ Plugin 'ap/vim-css-color'
 Plugin 'heartsentwined/vim-emblem'
 
 Plugin 'christoomey/vim-tmux-navigator'
+
+Plugin 'StanAngeloff/php.vim'
+
+Plugin 'editorconfig/editorconfig-vim'
