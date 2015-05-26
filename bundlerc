@@ -8,6 +8,8 @@ NeoBundle 'tpope/vim-haml'
 NeoBundle 'tpope/vim-markdown'
 NeoBundle 'tpope/vim-vinegar'
 NeoBundle 'tpope/vim-unimpaired'
+NeoBundle 'tpope/vim-eunuch'
+NeoBundle 'tpope/vim-repeat'
 NeoBundle 'Shougo/neocomplete.vim'
 NeoBundle 'Shougo/neosnippet'
 NeoBundle 'Shougo/neosnippet-snippets'
@@ -19,7 +21,7 @@ NeoBundle 'scrooloose/syntastic'
 NeoBundle 'mattn/webapi-vim'
 NeoBundle 'mattn/gist-vim'
 NeoBundle 'mattn/emmet-vim'
-NeoBundle 'scrooloose/nerdcommenter'
+NeoBundle 'tomtom/tcomment_vim'
 NeoBundle 'godlygeek/tabular'
 
 NeoBundle 'leshill/vim-json'
@@ -72,7 +74,7 @@ NeoBundle 'Lokaltog/vim-easymotion'
 
 NeoBundle 'AndrewRadev/vim-eco'
 
-NeoBundle 'mileszs/ack.vim'
+NeoBundle 'rking/ag.vim'
 
 NeoBundle 'vim-scripts/groovy.vim'
 
