@@ -1,0 +1,33 @@
+snippet cp "foo: computed(..., function() { ... })"
+${1:name}: computed(${2:params}, function() {
+	return ${3};
+})
+endsnippet
+
+snippet andthen "andThen(() => { ... });"
+andThen(() => {
+	${1}
+});
+endsnippet
+
+snippet andthend "andThen(() => { debugger };..."
+andThen(() => {
+	debugger
+});
+endsnippet
+
+snippet screate "server.create('foo')"
+server.create("${1}")
+endsnippet
+
+snippet screate{ "server.create('foo')"
+server.create("${1}", { ${2} })
+endsnippet
+
+snippet screateL "server.create('foo')"
+server.createList("${1}", ${2})
+endsnippet
+
+snippet screateL{ "server.create('foo')"
+server.createList("${1}", ${2}, { ${3} })
+endsnippet
