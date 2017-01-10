@@ -16,7 +16,7 @@ call dein#add('honza/vim-snippets')
 "call dein#add('Shougo/neosnippet')
 "call dein#add('Shougo/neosnippet-snippets')
 call dein#add('honza/vim-clojure-conceal')
-call dein#add('kien/ctrlp.vim')
+"call dein#add('kien/ctrlp.vim')
 
 call dein#add('scrooloose/syntastic')
 call dein#add('mattn/webapi-vim')
@@ -61,8 +61,6 @@ call dein#add('vim-scripts/paredit.vim')
 
 call dein#add('luochen1990/rainbow')
 
-call dein#add('isnowfy/python-vim-instant-markdown')
-
 call dein#add('alfredodeza/pytest.vim')
 
 call dein#add('klen/python-mode')
@@ -70,7 +68,7 @@ call dein#add('klen/python-mode')
 call dein#add('flazz/vim-colorschemes')
 call dein#add('ScrollColors')
 
-call dein#add('Lokaltog/vim-easymotion')
+call dein#add('easymotion/vim-easymotion')
 
 call dein#add('AndrewRadev/vim-eco')
 
@@ -107,3 +105,9 @@ call dein#add('heavenshell/vim-jsdoc')
 call dein#add('vim-scripts/languagetool')
 
 call dein#add('Konfekt/FastFold')
+
+call dein#add('Chiel92/vim-autoformat')
+
+call dein#add('Shougo/denite.nvim')
+
+call dein#add('nixprime/cpsm')
