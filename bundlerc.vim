@@ -10,7 +10,11 @@ call dein#add('tpope/vim-vinegar')
 call dein#add('tpope/vim-unimpaired')
 call dein#add('tpope/vim-eunuch')
 call dein#add('tpope/vim-repeat')
-call dein#add('Shougo/neocomplete.vim')
+if has('nvim')
+  call dein#add('Shougo/deoplete.nvim')
+else
+  call dein#add('Shougo/neocomplete.vim')
+endif
 call dein#add('SirVer/ultisnips')
 call dein#add('honza/vim-snippets')
 "call dein#add('Shougo/neosnippet')
@@ -25,7 +29,7 @@ call dein#add('mattn/emmet-vim')
 call dein#add('tomtom/tcomment_vim')
 call dein#add('godlygeek/tabular')
 
-call dein#add('leshill/vim-json')
+call dein#add('ohcibi/vim-json')
 call dein#add('othree/yajs.vim', { 'merged': 0})
 call dein#add('briancollins/vim-jst')
 call dein#add('kchmck/vim-coffee-script')
@@ -49,7 +53,6 @@ call dein#add('airblade/vim-gitgutter')
 call dein#add('derekwyatt/vim-scala')
 
 call dein#add('bufkill.vim')
-call dein#add('LustyJuggler')
 call dein#add('gnupg.vim')
 
 call dein#add('lervag/vimtex')
@@ -111,3 +114,7 @@ call dein#add('Chiel92/vim-autoformat')
 call dein#add('Shougo/denite.nvim')
 
 call dein#add('nixprime/cpsm')
+
+call dein#add('ternjs/tern_for_vim')
+
+call dein#add('carlitux/deoplete-ternjs')
