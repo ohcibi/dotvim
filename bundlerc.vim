@@ -10,6 +10,7 @@ call dein#add('tpope/vim-vinegar')
 call dein#add('tpope/vim-unimpaired')
 call dein#add('tpope/vim-eunuch')
 call dein#add('tpope/vim-repeat')
+call dein#add('tpope/vim-sensible')
 if has('nvim')
   call dein#add('Shougo/deoplete.nvim')
 else
@@ -22,15 +23,17 @@ call dein#add('honza/vim-snippets')
 call dein#add('honza/vim-clojure-conceal')
 "call dein#add('kien/ctrlp.vim')
 
-call dein#add('scrooloose/syntastic')
+"call dein#add('scrooloose/syntastic')
+call dein#add('w0rp/ale')
 call dein#add('mattn/webapi-vim')
 call dein#add('mattn/gist-vim')
 call dein#add('mattn/emmet-vim')
 call dein#add('tomtom/tcomment_vim')
 call dein#add('godlygeek/tabular')
 
-call dein#add('ohcibi/vim-json')
+call dein#add('bdmartin/vim-json')
 call dein#add('othree/yajs.vim', { 'merged': 0})
+call dein#add('othree/es.next.syntax.vim', { 'merged': 0})
 call dein#add('briancollins/vim-jst')
 call dein#add('kchmck/vim-coffee-script')
 
@@ -44,7 +47,8 @@ call dein#add('nathanaelkane/vim-indent-guides')
 call dein#add('bling/vim-airline')
 call dein#add('bling/vim-bufferline')
 
-call dein#add('mustache/vim-mustache-handlebars')
+"call dein#add('mustache/vim-mustache-handlebars')
+call dein#add('joukevandermaas/vim-ember-hbs', { 'merged': 0 })
 
 call dein#add('adimit/prolog.vim')
 
@@ -52,8 +56,8 @@ call dein#add('airblade/vim-gitgutter')
 
 call dein#add('derekwyatt/vim-scala')
 
-call dein#add('bufkill.vim')
-call dein#add('gnupg.vim')
+call dein#add('vim-scripts/bufkill.vim')
+call dein#add('vim-scripts/gnupg.vim')
 
 call dein#add('lervag/vimtex')
 
@@ -62,14 +66,14 @@ call dein#add('tpope/vim-fireplace')
 call dein#add('tpope/vim-classpath')
 call dein#add('vim-scripts/paredit.vim')
 
-call dein#add('luochen1990/rainbow')
+call dein#add('luochen1990/rainbow', { 'merged': 0 })
 
 call dein#add('alfredodeza/pytest.vim')
 
 call dein#add('klen/python-mode')
 
 call dein#add('flazz/vim-colorschemes')
-call dein#add('ScrollColors')
+call dein#add('vim-scripts/ScrollColors')
 
 call dein#add('easymotion/vim-easymotion')
 
@@ -99,7 +103,7 @@ call dein#add('othree/html5.vim')
 
 call dein#add('rizzatti/dash.vim')
 
-call dein#add('cohama/agit.vim')
+"call dein#add('cohama/agit.vim')
 
 call dein#add('isRuslan/vim-es6')
 
@@ -118,3 +122,11 @@ call dein#add('nixprime/cpsm')
 call dein#add('ternjs/tern_for_vim')
 
 call dein#add('carlitux/deoplete-ternjs')
+
+call dein#add('prettier/vim-prettier', { 'merged': 0 })
+
+call dein#add('HerringtonDarkholme/yats.vim')
+
+call dein#add('Quramy/vim-js-pretty-template')
+
+call dein#add('Quramy/tsuquyomi')
