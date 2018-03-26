@@ -1,1 +1,1 @@
-../runcoms/vimrc
+vimrc

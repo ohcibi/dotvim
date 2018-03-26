@@ -11,20 +11,20 @@ call dein#add('tpope/vim-unimpaired')
 call dein#add('tpope/vim-eunuch')
 call dein#add('tpope/vim-repeat')
 call dein#add('tpope/vim-sensible')
+
 if has('nvim')
   call dein#add('Shougo/deoplete.nvim')
 else
   call dein#add('Shougo/neocomplete.vim')
 endif
+
 call dein#add('SirVer/ultisnips')
 call dein#add('honza/vim-snippets')
-"call dein#add('Shougo/neosnippet')
-"call dein#add('Shougo/neosnippet-snippets')
 call dein#add('honza/vim-clojure-conceal')
-"call dein#add('kien/ctrlp.vim')
 
-"call dein#add('scrooloose/syntastic')
+call dein#add('Shougo/vimproc.vim', {'build': 'make'})
 call dein#add('w0rp/ale')
+
 call dein#add('mattn/webapi-vim')
 call dein#add('mattn/gist-vim')
 call dein#add('mattn/emmet-vim')
@@ -45,9 +45,7 @@ call dein#add('ervandew/supertab')
 call dein#add('nathanaelkane/vim-indent-guides')
 
 call dein#add('bling/vim-airline')
-call dein#add('bling/vim-bufferline')
 
-"call dein#add('mustache/vim-mustache-handlebars')
 call dein#add('joukevandermaas/vim-ember-hbs', { 'merged': 0 })
 
 call dein#add('adimit/prolog.vim')
@@ -103,8 +101,6 @@ call dein#add('othree/html5.vim')
 
 call dein#add('rizzatti/dash.vim')
 
-"call dein#add('cohama/agit.vim')
-
 call dein#add('isRuslan/vim-es6')
 
 call dein#add('heavenshell/vim-jsdoc')
@@ -117,9 +113,9 @@ call dein#add('Chiel92/vim-autoformat')
 
 call dein#add('Shougo/denite.nvim')
 
-call dein#add('nixprime/cpsm')
+call dein#add('nixprime/cpsm', { 'build': 'PY3=ON ./install.sh' })
 
-call dein#add('ternjs/tern_for_vim')
+call dein#add('ternjs/tern_for_vim', { 'build': 'npm install' })
 
 call dein#add('carlitux/deoplete-ternjs')
 

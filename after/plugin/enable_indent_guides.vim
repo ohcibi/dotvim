@@ -1,1 +1,3 @@
-IndentGuidesEnable
+if exists(":IndentGuidesEnable")
+  IndentGuidesEnable
+endif

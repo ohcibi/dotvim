@@ -3,9 +3,13 @@ syntax on
 set background=light
 
 if has("gui_running")
-  colorscheme tidy
-else
   colorscheme github
+else
+  if $ITERM_PROFILE == "Hotkey Window"
+    colorscheme tomorrow-night
+  else
+    colorscheme github
+  end
 end
 
 highlight Comment cterm=italic cterm=italic gui=italic
