@@ -198,10 +198,6 @@ au BufWinEnter * silent! loadview
 
 let g:neocomplete#enable_at_startup = 1
 
-hi IndentGuidesOdd ctermbg=255 guibg=white
-hi IndentGuidesEven ctermbg=254 guibg=lightgrey
-hi Normal ctermbg=15
-
 " FUGITIVE commands
 command! Gci Gcommit --verbose
 command! Gds Git diff --staged
