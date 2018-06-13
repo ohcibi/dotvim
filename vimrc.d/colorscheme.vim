@@ -1,6 +1,6 @@
 " colors and formatting
 syntax on
-set background=light
+"set termguicolors
 
 if has("gui_running")
   colorscheme github
@@ -13,6 +13,8 @@ else
 end
 
 highlight Comment cterm=italic cterm=italic gui=italic
+highlight Folded  ctermbg=254 guibg=#F1F1FF
+highlight LineNr  ctermbg=255 guibg=#F8F8FF
 
 set colorcolumn=80
 set cursorline
