@@ -3,7 +3,8 @@ let g:ale_sign_error = '✘'
 let g:ale_sign_warning = '﹅'
 let g:ale_fixers = {
       \ 'javascript': ['eslint'],
-      \ 'typescript': ['tslint']
+      \ 'typescript': ['tslint'],
+      \ 'python': ['autopep8', 'yapf', 'isort']
       \ }
 let g:ale_javascript_eslint_options = "--no-ignore"
 let g:ale_typescript_tslint_options = "--no-ignore"

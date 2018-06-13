@@ -11,6 +11,7 @@ call dein#add('tpope/vim-unimpaired')
 call dein#add('tpope/vim-eunuch')
 call dein#add('tpope/vim-repeat')
 call dein#add('tpope/vim-sensible')
+call dein#add('tpope/vim-apathy', { 'merged': 0 })
 
 if has('nvim')
   call dein#add('Shougo/deoplete.nvim')
@@ -68,7 +69,7 @@ call dein#add('luochen1990/rainbow', { 'merged': 0 })
 
 call dein#add('alfredodeza/pytest.vim')
 
-call dein#add('klen/python-mode')
+call dein#add('zchee/deoplete-jedi')
 
 call dein#add('flazz/vim-colorschemes')
 call dein#add('vim-scripts/ScrollColors')
@@ -126,3 +127,5 @@ call dein#add('HerringtonDarkholme/yats.vim')
 call dein#add('Quramy/vim-js-pretty-template')
 
 call dein#add('Quramy/tsuquyomi')
+
+call dein#add('justinmk/vim-dirvish')

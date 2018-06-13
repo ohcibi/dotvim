@@ -82,7 +82,6 @@ au BufRead,BufNewFile {*.yml} set ft=yaml
 
 " make and python use real tabs
 au FileType make set noexpandtab
-au FileType python set noexpandtab
 au FileType help set noexpandtab
 au FileType help set softtabstop=8
 
@@ -114,6 +113,7 @@ vnoremap <leader>y "+y
 
 if has('nvim')
   tnoremap <C-space> <C-\><C-N>
+  tnoremap <space><space> <C-\><C-N>
   tnoremap <C-h> <C-\><C-N><C-w>h
   tnoremap <C-j> <C-\><C-N><C-w>j
   tnoremap <C-k> <C-\><C-N><C-w>k
@@ -149,8 +149,10 @@ nnoremap <c-p> :Denite buffer file_rec<cr>
 nnoremap gf :Denite file_rec<cr>
 nnoremap gfb :Denite buffer file_rec<cr>
 
-nnoremap gs :split<cr>
-nnoremap gsv :vsplit<cr>
+nnoremap gs :split 
+nnoremap gsv :vsplit 
+nnoremap gs<cr> :split<cr>
+nnoremap gsv<cr> :vsplit<cr>
 
 " show highlighting group under cursor when pressing F10
 map <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
@@ -246,7 +248,8 @@ nmap cx :Eval<cr>
 
 " text editing
 au BufEnter *.md,*.markdown,*.txt,*.tex,*.latex set textwidth=100
-au BufEnter *.md,*.markdown,*.txt,*.tex,*.latex set spelllang=de
+au BufEnter *.md,*.markdown,*.txt set spelllang=en
+au BufEnter *.tex,*.latex set spelllang=de
 au BufEnter *.md,*.markdown,*.txt,*.tex,*.latex set spell
 
 " gradle == groovy
@@ -272,7 +275,9 @@ autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 let g:pymode_rope_lookup_project = 0
 
 " pymode python
-" let g:pymode_python = 'python3'
+"let g:pymode_python = 'python3'
+let g:python_host_prog=expand('~/.pyenv/neovim/bin/python')
+let g:python3_host_prog=expand('~/.pyenv/neovim3/bin/python')
 
 au Syntax gitcommit set foldmethod=manual
 au Syntax gitcommit set spell
@@ -326,7 +331,6 @@ map gr :call RemoveC()<cr>
 
 hi diffRemoved ctermfg=magenta cterm=bold
 hi diffAdded ctermfg=darkgreen cterm=bold
-set path=.,**
 set wildmenu
 
 set colorcolumn=100
@@ -364,7 +368,7 @@ if has('nvim')
   let g:deoplete#sources = {}
   let g:deoplete#sources['javascript.jsx'] = ['file', 'ultisnips', 'ternjs']
 
-  let g:deoplete#file#enable_buffer_path = 1
+" #let g:deoplete#file#enable_buffer_path = 1
 
   set cot=longest,menuone,preview
 endif
@@ -376,9 +380,6 @@ let g:tern#command = ["tern"]
 let g:tern#arguments = ["--persistent"]
 
 set diffopt+=vertical
-
-" virtualenv
-"let g:python3_host_prog='/Users/ohcibi/.pyenv/py3neovim/bin/python'
 
 let g:UltiSnipsSnippetDirectories=["UltiSnips"]
 
@@ -393,6 +394,7 @@ if has('nvim')
     autocmd TermOpen * setlocal statusline=%{getcwd()}
     autocmd TermOpen * set relativenumber
     autocmd TermOpen * set foldcolumn=0
+    autocmd TermOpen * set nospell
 
     nnoremap <leader>t :e term://
 endif
@@ -414,5 +416,7 @@ set inccommand=nosplit
 
 set guicursor=n-v-c-sm:block,i-ci-ve:ver25-blinkon100,r-cr-o:hor20
 
-runtime! vimrc.d/**.vim
-runtime! vimrc.local.d/**.vim
+
+"set verbose=1
+runtime! vimrc.d/*.vim
+runtime! vimrc.local.d/*.vim
