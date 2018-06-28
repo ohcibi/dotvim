@@ -11,7 +11,7 @@ else
   end
 end
 
-" sanitize github colorscheme
+" sanitize github colorscheme TODO: rather fix up better looking tomorrow scheme
 highlight Folded  ctermbg=254 guibg=#F1F1FF
 highlight LineNr  ctermbg=255 guibg=#F8F8FF
 
@@ -31,7 +31,7 @@ hi Error term=underline ctermfg=NONE cterm=underline ctermbg=225
 
 " highlight all {}[]()<>"'`.;, bold faced
 hi boldFaced cterm=bold term=bold gui=bold
-match boldFaced /[()\[\]{}\<\>"'`;,\.:]/
+match boldFaced /[()\[\]{}"'`;,\.:]/
 
 " php doc tags 💩
 hi phpDocTags term=None cterm=bold ctermfg=235 gui=bold guifg=#222288
