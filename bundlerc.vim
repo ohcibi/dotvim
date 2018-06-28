@@ -129,3 +129,5 @@ call dein#add('Quramy/vim-js-pretty-template')
 call dein#add('Quramy/tsuquyomi')
 
 call dein#add('justinmk/vim-dirvish')
+
+call dein#add('kergoth/vim-bitbake')

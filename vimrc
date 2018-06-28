@@ -333,14 +333,7 @@ set colorcolumn=100
 
 call denite#custom#var('file_rec', 'command',
   \ ['ag', '--follow', '--nocolor', '--nogroup', '-g', ''])
-call denite#custom#source('file_rec', 'matchers', ['matcher_cpsm', 'matcher_ignore_globs'])
-call denite#custom#filter('matcher_ignore_globs', 'ignore_globs',
-      \ [ '*~', '*.o', '*.exe', '*.bak',
-      \ '.DS_Store', '*.pyc', '*.sw[po]', '*.class',
-      \ '.hg/', '.git/', '.bzr/', '.svn/',
-      \ '.idea/', 'dist/',
-      \ 'tags', 'tags-*'])
-      "\ 'node_modules/', 'bower_components/', 'tmp/', 'log/', 'vendor/ruby',
+"call denite#custom#source('file_rec', 'matchers', ['matcher_cpsm'])
 
 " vim-json
 let g:vim_json_comments=1
