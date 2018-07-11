@@ -15,6 +15,9 @@ end
 highlight Folded  ctermbg=254 guibg=#F1F1FF
 highlight LineNr  ctermbg=255 guibg=#F8F8FF
 
+" highlight inactive terminal cursor
+hi TermCursorNC ctermbg=14 ctermfg=15 cterm=NONE
+
 " make comments italic
 highlight Comment cterm=italic cterm=italic gui=italic
 
