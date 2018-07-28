@@ -30,6 +30,11 @@ endif
 
 "End dein Scripts-------------------------
 
+" Make neovim python binding available regardless from current virtualenv
+let g:python_host_prog=expand('~/.pyenv/neovim/bin/python')
+let g:python3_host_prog=expand('~/.pyenv/neovim3/bin/python')
+
+
 " source $HOME/.vim/bundlerc.vim
 "
 set grepprg="grep -nH $*"
@@ -80,7 +85,7 @@ autocmd BufEnter *.eco set filetype=eco
 au BufRead,BufNewFile {Gemfile,Rakefile,Thorfile,config.ru,Guardfile,*.rb} set ft=ruby
 au BufRead,BufNewFile {*.yml} set ft=yaml
 
-" make and python use real tabs
+" make use real tabs
 au FileType make set noexpandtab
 au FileType help set noexpandtab
 au FileType help set softtabstop=8
@@ -264,22 +269,15 @@ imap <c-z>, <c-y>,
 autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
 autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
 "autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
-autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
 autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 
 " disable parent dir search for rope
 let g:pymode_rope_lookup_project = 0
 
-" pymode python
-"let g:pymode_python = 'python3'
-let g:python_host_prog=expand('~/.pyenv/neovim/bin/python')
-let g:python3_host_prog=expand('~/.pyenv/neovim3/bin/python')
-
-au Syntax gitcommit set foldmethod=manual
-au Syntax gitcommit set spell
-au Syntax gitcommit set spelllang=en
-au Syntax gitcommit set colorcolumn=72
-au FileType agit_diff set foldmethod=diff
+au FileType gitcommit setlocal spell
+au FileType gitcommit setlocal spelllang=en
+au FileType gitcommit setlocal colorcolumn=72
+au FileType gitcommit setlocal foldmethod=diff
 
 let g:quickrun_config = {
 \   'markdown': {
@@ -328,8 +326,6 @@ map gr :call RemoveC()<cr>
 hi diffRemoved ctermfg=magenta cterm=bold
 hi diffAdded ctermfg=darkgreen cterm=bold
 set wildmenu
-
-set colorcolumn=100
 
 call denite#custom#var('file_rec', 'command',
   \ ['ag', '--follow', '--nocolor', '--nogroup', '-g', ''])

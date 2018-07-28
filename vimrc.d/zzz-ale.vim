@@ -10,5 +10,7 @@ let g:ale_javascript_eslint_options = "--no-ignore"
 let g:ale_typescript_tslint_options = "--no-ignore"
 let g:ale_typescript_tslint_executable = "tslint --project tsconfig.json"
 let g:ale_html_tidy_options = "-config .tidyrc"
+let g:ale_python_pylint_options = "--rcfile=.pylintrc"
+let g:ale_python_pylint_change_directory=0
 hi ALEErrorSign ctermfg=darkred
 hi ALEWarningSign ctermfg=darkyellow
