@@ -116,24 +116,10 @@ map <leader>f <Plug>(ale_fix)
 nnoremap <leader>y "+yy
 vnoremap <leader>y "+y
 
-if has('nvim')
-  tnoremap <C-space> <C-\><C-N>
-  tnoremap <space><space> <C-\><C-N>
-  tnoremap <C-h> <C-\><C-N><C-w>h
-  tnoremap <C-j> <C-\><C-N><C-w>j
-  tnoremap <C-k> <C-\><C-N><C-w>k
-  tnoremap <C-l> <C-\><C-N><C-w>l
-  inoremap <C-h> <C-\><C-N><C-w>h
-  inoremap <C-j> <C-\><C-N><C-w>j
-  inoremap <C-k> <C-\><C-N><C-w>k
-  inoremap <C-l> <C-\><C-N><C-w>l
-  nnoremap <C-h> <C-w>h
-  nnoremap <C-j> <C-w>j
-  nnoremap <C-k> <C-w>k
-  nnoremap <C-l> <C-w>l
-
-  nnoremap <c-t> :terminal<cr>
-endif
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
 
 " Tabularize
 
@@ -351,16 +337,6 @@ let g:prettier#config#single_quote = 'false'
 let g:prettier#config#print_width = 100
 let g:prettier#config#trailing_comma = 'none'
 let g:prettier#config#bracket_spacing = 'true'
-
-" terminal
-if has('nvim')
-    autocmd TermOpen * setlocal statusline=%{getcwd()}
-    autocmd TermOpen * set relativenumber
-    autocmd TermOpen * set foldcolumn=0
-    autocmd TermOpen * set nospell
-
-    nnoremap <leader>t :e term://
-endif
 
 command -nargs=* Ng e term://ng <args>
 command -nargs=* -complete=custom,ListNgServeOpts NgServe e term://ng serve <args>
