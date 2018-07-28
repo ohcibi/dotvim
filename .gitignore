@@ -6,5 +6,6 @@
 /spell/
 /dein/
 /vimrc.local.d/
+/.cache/
 
 .netrwhist

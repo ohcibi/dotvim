@@ -177,25 +177,25 @@ set undolevels=1000         "maximum number of changes that can be undone
 set undoreload=10000        "maximum number lines to save for undo on a buffer reload
 
 if has('nvim')
-  set undodir=$HOME/.nvim/undo//
-  set backupdir=$HOME/.nvim/backup//
-  set directory=$HOME/.nvim/swap//
-  set viewdir=$HOME/.nvim/views//
+  set undodir=$HOME/.nvim/.cache/undo//
+  set backupdir=$HOME/.nvim/.cache/backup//
+  set directory=$HOME/.nvim/.cache/swap//
+  set viewdir=$HOME/.nvim/.cache/views//
 
-  silent execute '!mkdir -p $HOME/.nvim/backup'
-  silent execute '!mkdir -p $HOME/.nvim/swap'
-  silent execute '!mkdir -p $HOME/.nvim/views'
-  silent execute '!mkdir -p $HOME/.nvim/undo'
+  silent execute '!mkdir -p $HOME/.nvim/.cache/backup'
+  silent execute '!mkdir -p $HOME/.nvim/.cache/swap'
+  silent execute '!mkdir -p $HOME/.nvim/.cache/views'
+  silent execute '!mkdir -p $HOME/.nvim/.cache/undo'
 else
-  set undodir=$HOME/.vim/undo//
-  set backupdir=$HOME/.vim/backup//
+  set undodir=$HOME/.vim/.cache/undo//
+  set backupdir=$HOME/.vim/.cache/backup//
   set directory=$HOME/.vim/swap//
-  set viewdir=$HOME/.vim/views//
+  set viewdir=$HOME/.vim/.cache/views//
 
-  silent execute '!mkdir -p $HOME/.vim/backup'
-  silent execute '!mkdir -p $HOME/.vim/swap'
-  silent execute '!mkdir -p $HOME/.vim/views'
-  silent execute '!mkdir -p $HOME/.vim/undo'
+  silent execute '!mkdir -p $HOME/.vim/.cache/backup'
+  silent execute '!mkdir -p $HOME/.vim/.cache/swap'
+  silent execute '!mkdir -p $HOME/.vim/.cache/views'
+  silent execute '!mkdir -p $HOME/.vim/.cache/undo'
 endif
 
 au BufWinLeave * silent! mkview
