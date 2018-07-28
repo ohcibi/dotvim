@@ -1,1 +1,0 @@
-UltiSnipsAddFiletypes handlebars.html
