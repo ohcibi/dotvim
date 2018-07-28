@@ -286,28 +286,6 @@ let g:quickrun_config = {
 \   }
 \ }
 
-let g:airline_powerline_fonts = 1
-let g:airline#extensions#bufferline#overwrite_variables = 0
-let g:airline#extensions#tmuxline#enabled = 0
-let g:bufferline_rotate = 1
-let g:bufferline_fixed_index = -1
-let g:bufferline_active_buffer_left = '['
-let g:bufferline_active_buffer_right = ']'
-let g:bufferline_modified = '+'
-let g:bufferline_show_bufnr = 1
-let g:bufferline_echo = 0
-let g:airline#extensions#branch#displayed_head_limit = 25
-let g:airline#extensions#branch#format = 2
-let g:airline_skip_empty_sections = 1
-
-let g:airline#extensions#default#section_truncate_width = {
-  \ 'b': 120,
-  \ 'x': 100,
-  \ 'y': 100,
-  \ 'z': 45,
-  \ 'warning': 79,
-  \ }
-
 " syntastic
 let g:syntastic_coffee_checkers = ['coffee', 'coffeelint']
 let g:syntastic_javascript_checkers = ['jshint', 'eslint']

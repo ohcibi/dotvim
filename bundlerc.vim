@@ -45,7 +45,8 @@ call dein#add('ervandew/supertab')
 
 call dein#add('nathanaelkane/vim-indent-guides')
 
-call dein#add('bling/vim-airline')
+call dein#add('vim-airline/vim-airline')
+call dein#add('vim-airline/vim-airline-themes')
 
 call dein#add('joukevandermaas/vim-ember-hbs', { 'merged': 0 })
 
