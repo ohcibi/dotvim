@@ -134,3 +134,5 @@ call dein#add('justinmk/vim-dirvish')
 call dein#add('kergoth/vim-bitbake')
 
 call dein#add('jreybert/vimagit')
+
+call dein#add('ryanoasis/vim-devicons')
