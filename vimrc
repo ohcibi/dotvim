@@ -31,8 +31,8 @@ endif
 "End dein Scripts-------------------------
 
 " Make neovim python binding available regardless from current virtualenv
-let g:python_host_prog=expand('~/.pyenv/neovim/bin/python')
-let g:python3_host_prog=expand('~/.pyenv/neovim3/bin/python')
+let g:python_host_prog=expand('~/.venv/neovim/bin/python')
+let g:python3_host_prog=expand('~/.venv/neovim3/bin/python')
 
 
 " source $HOME/.vim/bundlerc.vim
@@ -60,7 +60,13 @@ set tabstop=2
 set shiftwidth=2
 set softtabstop=2
 set expandtab
-set list listchars=tab:→\ ,trail:·
+set list
+
+" show non printable chars an wrap
+set showbreak=↪\ 
+set listchars=tab:→\ ,trail:·,extends:⟩,precedes:⟨
+set sidescroll=1
+set nowrap
 
 " search
 set incsearch

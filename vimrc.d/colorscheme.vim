@@ -28,7 +28,7 @@ hi TermCursorNC ctermbg=14 ctermfg=15 cterm=NONE guibg=#e9e9ff
 highlight Comment cterm=italic cterm=italic gui=italic
 
 " display a colorcolumn TODO: make width configurable in vimrc
-set colorcolumn=80
+set colorcolumn=100
 
 " show cursorline and configure highlighting
 set cursorline
