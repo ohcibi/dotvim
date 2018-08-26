@@ -2,9 +2,10 @@ if has('nvim')
   let $VISUAL = 'nvr -cc split --remote-wait'
 
   autocmd TermOpen * setlocal statusline=%{getcwd()}
-  autocmd TermOpen * setlocal relativenumber
+  autocmd TermOpen * setlocal nonumber
   autocmd TermOpen * setlocal foldcolumn=0
   autocmd TermOpen * setlocal nospell
+  autocmd TermOpen * setlocal nowrap
   autocmd TermOpen * IndentGuidesDisable
   autocmd TermOpen * echo 'TermOpen'
   autocmd BufEnter * call terminal#indent()

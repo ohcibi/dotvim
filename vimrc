@@ -35,8 +35,6 @@ let g:python_host_prog=expand('~/.venv/neovim/bin/python')
 let g:python3_host_prog=expand('~/.venv/neovim3/bin/python')
 
 
-" source $HOME/.vim/bundlerc.vim
-"
 set grepprg="grep -nH $*"
 
 let mapleader=","
@@ -54,6 +52,9 @@ set backspace=indent,eol,start
 
 set foldmethod=indent
 set foldcolumn=2
+
+" set terminal tab/window title to current filename
+set title
 
 " tabs
 set tabstop=2
@@ -262,9 +263,6 @@ autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
 autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
 "autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
 autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
-
-" disable parent dir search for rope
-let g:pymode_rope_lookup_project = 0
 
 au FileType gitcommit setlocal spell
 au FileType gitcommit setlocal spelllang=en
