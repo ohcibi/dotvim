@@ -84,3 +84,8 @@ exec "hi Special guifg=#" . s:green
 hi javascriptParens guifg=#770000
 hi! link javascriptObjectMethodName Function
 hi! link javascriptBraces Function
+hi! link javascriptIdentifier Identifier
+hi! link javascriptIdentifierName Identifier
+hi! link javascriptDecoratorFuncName Function
+hi! link javascriptDecorator Operator
+hi! link javascriptDecoratorParens javascriptParens

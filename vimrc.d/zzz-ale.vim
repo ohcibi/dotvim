@@ -16,3 +16,5 @@ hi ALEErrorSign ctermfg=darkred guifg=#990000
 hi ALEWarningSign ctermfg=darkyellow guifg=#999944
 hi ALEErrorLine cterm=undercurl,italic gui=undercurl,italic guibg=#ffdddd
 hi ALEWarningLine cterm=italic gui=italic guibg=#ffffee
+
+au FileType javascript let b:ale_linters_ignore = ['tsserver']
