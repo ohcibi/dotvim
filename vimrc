@@ -139,13 +139,10 @@ vmap <leader>tab,       :Tabularize /,<cr>
 vmap <leader>tab;       :Tabularize /;<cr>
 
 " Buffers and files
-nnoremap gb :ls<cr>:b
-nnoremap gbd :ls<cr>:bd
-nnoremap gbs :Denite buffer<cr>
+nnoremap gb :Denite buffer<cr>
 nnoremap <c-b> :Denite buffer<cr>
-nnoremap <c-p> :Denite buffer file_rec<cr>
+nnoremap <c-p> :Denite file_rec<cr>
 nnoremap gf :Denite file_rec<cr>
-nnoremap gfb :Denite buffer file_rec<cr>
 
 nnoremap gs :split 
 nnoremap gsv :vsplit 
