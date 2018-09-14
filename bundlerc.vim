@@ -79,8 +79,6 @@ call dein#add('easymotion/vim-easymotion')
 
 call dein#add('AndrewRadev/vim-eco')
 
-call dein#add('rking/ag.vim')
-
 call dein#add('vim-scripts/groovy.vim')
 
 call dein#add('thinca/vim-quickrun')
@@ -136,3 +134,7 @@ call dein#add('kergoth/vim-bitbake')
 call dein#add('jreybert/vimagit')
 
 call dein#add('ryanoasis/vim-devicons')
+
+call dein#add('junegunn/fzf', { 'build': './install --bin' })
+
+call dein#add('junegunn/fzf.vim')

@@ -138,12 +138,6 @@ vmap <leader>tab:       :Tabularize /:<cr>
 vmap <leader>tab,       :Tabularize /,<cr>
 vmap <leader>tab;       :Tabularize /;<cr>
 
-" Buffers and files
-nnoremap gb :Denite buffer<cr>
-nnoremap <c-b> :Denite buffer<cr>
-nnoremap <c-p> :Denite file_rec<cr>
-nnoremap gf :Denite file_rec<cr>
-
 nnoremap gs :split 
 nnoremap gsv :vsplit 
 nnoremap gs<cr> :split<cr>
@@ -291,10 +285,6 @@ map gr :call RemoveC()<cr>
 hi diffRemoved ctermfg=magenta cterm=bold
 hi diffAdded ctermfg=darkgreen cterm=bold
 set wildmenu
-
-call denite#custom#var('file_rec', 'command',
-  \ ['ag', '--follow', '--nocolor', '--nogroup', '-g', ''])
-"call denite#custom#source('file_rec', 'matchers', ['matcher_cpsm'])
 
 " vim-json
 let g:vim_json_comments=1
