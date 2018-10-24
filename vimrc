@@ -102,15 +102,6 @@ let b:Tex_SmartQuoteOpen = '"`'
 let b:Tex_SmartQuoteClose = "\"'"
 
 " mappings
-nmap <Tab> :bn<CR>
-map <S-Tab> :bp<CR>
-nmap n nzz
-nmap N Nzz
-
-noremap <C-c> :BD<CR>
-
-noremap <leader>c :CoffeeCompile vert<CR>
-
 map <leader>a :A<cr>
 
 noremap <leader>r :!bundle exec rspec %<cr>
