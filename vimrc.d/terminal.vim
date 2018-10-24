@@ -6,15 +6,18 @@ if has('nvim')
   autocmd TermOpen * setlocal foldcolumn=0
   autocmd TermOpen * setlocal nospell
   autocmd TermOpen * setlocal nowrap
-  autocmd TermOpen * IndentGuidesDisable
-  autocmd TermOpen * echo 'TermOpen'
-  autocmd BufEnter * call terminal#indent()
+  autocmd TermOpen * setlocal statusline=%{get(b:,'term_title','')}
+  autocmd TermOpen * setlocal titlestring=%{get(b:,'term_title','')}
+  autocmd TermOpen,BufEnter * call terminal#indent()
 
   fun terminal#indent()
     if &buftype == 'terminal'
       IndentGuidesDisable
+      let w:airline_disabled=1
+
     else
       IndentGuidesEnable
+      let w:airline_disabled=0
     endif
   endfun
 

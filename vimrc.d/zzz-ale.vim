@@ -3,7 +3,7 @@ let g:ale_sign_error = '✘'
 let g:ale_sign_warning = '﹅'
 let g:ale_fixers = {
       \ 'javascript': ['eslint'],
-      \ 'typescript': ['tslint'],
+      \ 'typescript': ['tsserver'],
       \ 'python': ['autopep8', 'yapf', 'isort']
       \ }
 let g:ale_javascript_eslint_options = "--no-ignore"
@@ -18,3 +18,4 @@ hi ALEErrorLine cterm=undercurl,italic gui=undercurl,italic guibg=#ffdddd
 hi ALEWarningLine cterm=italic gui=italic guibg=#ffffee
 
 au FileType javascript let b:ale_linters_ignore = ['tsserver']
+au FileType typescript let b:ale_linters = ['tsserver', 'prettier']

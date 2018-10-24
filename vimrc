@@ -107,8 +107,6 @@ map <S-Tab> :bp<CR>
 nmap n nzz
 nmap N Nzz
 
-noremap <c-o> :!open %<cr>
-
 noremap <C-c> :BD<CR>
 
 noremap <leader>c :CoffeeCompile vert<CR>
