@@ -139,4 +139,6 @@ call dein#add('junegunn/fzf', { 'build': './install --bin' })
 
 call dein#add('junegunn/fzf.vim')
 
+call dein#add('autozimu/LanguageClient-neovim', { 'build': 'bash install.sh', 'rev': 'next' })
+
 call dein#add('numirias/semshi')
