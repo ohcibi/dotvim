@@ -138,3 +138,5 @@ call dein#add('ryanoasis/vim-devicons')
 call dein#add('junegunn/fzf', { 'build': './install --bin' })
 
 call dein#add('junegunn/fzf.vim')
+
+call dein#add('numirias/semshi')
