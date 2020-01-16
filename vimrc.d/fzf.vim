@@ -1,9 +1,9 @@
 nnoremap <c-p> :FZFFiles<cr>
-nnoremap gf :FZFFiles<cr>
-nnoremap gb :Buffers<cr>
+"nnoremap gf :FZFFiles<cr>
+"nnoremap gb :Buffers<cr>
 nnoremap <c-b> :Buffers<cr>
 
-nnoremap rg :Rg 
+nnoremap rg :Rg
 
 command! -bang -nargs=? -complete=dir FZFFiles
   \ call fzf#vim#files(<q-args>,

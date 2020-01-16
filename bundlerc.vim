@@ -12,19 +12,20 @@ call dein#add('tpope/vim-eunuch')
 call dein#add('tpope/vim-repeat')
 call dein#add('tpope/vim-sensible')
 call dein#add('tpope/vim-apathy', { 'merged': 0 })
+call dein#add('tpope/vim-projectionist')
+call dein#add('tpope/vim-dispatch')
+call dein#add('tpope/vim-endwise')
 
-if has('nvim')
-  call dein#add('Shougo/deoplete.nvim')
-else
-  call dein#add('Shougo/neocomplete.vim')
-endif
+call dein#add('Shougo/deoplete.nvim')
+
+call dein#add('Shougo/vimproc.vim', {'build': 'make'})
+call dein#add('Shougo/echodoc.vim')
 
 call dein#add('SirVer/ultisnips')
 call dein#add('honza/vim-snippets')
 call dein#add('honza/vim-clojure-conceal')
 
-call dein#add('Shougo/vimproc.vim', {'build': 'make'})
-call dein#add('w0rp/ale')
+call dein#add('dense-analysis/ale')
 
 call dein#add('mattn/webapi-vim')
 call dein#add('mattn/gist-vim')
@@ -70,7 +71,8 @@ call dein#add('luochen1990/rainbow', { 'merged': 0 })
 
 call dein#add('alfredodeza/pytest.vim')
 
-call dein#add('zchee/deoplete-jedi')
+call dein#add('deoplete-plugins/deoplete-jedi')
+call dein#add('deoplete-plugins/deoplete-docker')
 
 call dein#add('flazz/vim-colorschemes')
 call dein#add('vim-scripts/ScrollColors')
@@ -111,10 +113,6 @@ call dein#add('Konfekt/FastFold')
 
 call dein#add('Chiel92/vim-autoformat')
 
-call dein#add('Shougo/denite.nvim')
-
-call dein#add('nixprime/cpsm', { 'build': 'PY3=ON ./install.sh' })
-
 call dein#add('ternjs/tern_for_vim', { 'build': 'npm install' })
 
 call dein#add('carlitux/deoplete-ternjs')
@@ -123,9 +121,10 @@ call dein#add('prettier/vim-prettier', { 'merged': 0 })
 
 call dein#add('HerringtonDarkholme/yats.vim')
 
+call dein#add('mhartington/nvim-typescript', { 'build': './install.sh' })
+
 call dein#add('Quramy/vim-js-pretty-template')
 
-call dein#add('Quramy/tsuquyomi')
 
 call dein#add('justinmk/vim-dirvish')
 
@@ -139,6 +138,22 @@ call dein#add('junegunn/fzf', { 'build': './install --bin' })
 
 call dein#add('junegunn/fzf.vim')
 
+call dein#add('junegunn/limelight.vim')
+
+call dein#add('junegunn/goyo.vim')
+
 call dein#add('autozimu/LanguageClient-neovim', { 'build': 'bash install.sh', 'rev': 'next' })
 
 call dein#add('numirias/semshi')
+
+call dein#add('mhinz/vim-startify')
+
+call dein#add('dag/vim-fish')
+
+call dein#add('rhysd/git-messenger.vim', {
+            \   'lazy' : 1,
+            \   'on_cmd' : 'GitMessenger',
+            \   'on_map' : '<Plug>(git-messenger)',
+            \ })
+
+call dein#add('ncm2/float-preview.nvim')

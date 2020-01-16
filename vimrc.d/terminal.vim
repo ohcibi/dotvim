@@ -22,7 +22,9 @@ if has('nvim')
   endfun
 
   nnoremap <leader>t :e term://
-  nnoremap <c-t> :terminal<cr>
+  nnoremap <leader>T :terminal<cr>
+  nnoremap <leader>sT :split +terminal<cr>
+  nnoremap <leader>vT :vsplit +terminal<cr>
 
   tnoremap <C-space> <C-\><C-N>
   tnoremap <leader><space> <C-\><C-N>

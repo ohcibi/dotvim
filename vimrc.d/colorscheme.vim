@@ -7,7 +7,7 @@ if has("gui_running")
   colorscheme Tomorrow
 else
   if $ITERM_PROFILE == "Hotkey Window"
-    colorscheme Tomorrow-Night
+    colorscheme Tomorrow
   else
     colorscheme Tomorrow
   end

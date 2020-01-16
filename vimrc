@@ -1,88 +1,11 @@
+set isfname+=\{,\}
+
 if &compatible
   set nocompatible               " Be iMproved
 endif
 
-" Required:
-set runtimepath^=~/.vim/dein/repos/github.com/Shougo/dein.vim
-
-" Required:
-if dein#load_state(expand('~/.vim/dein/'))
-  call dein#begin(expand('~/.vim/dein'))
-
-  " Let dein manage dein
-  " Required:
-  call dein#add(expand('~/.vim/dein/repos/github.com/Shougo/dein.vim'))
-
-  source $HOME/.vim/bundlerc.vim
-
-  " Required:
-  call dein#end()
-  call dein#save_state()
-endif
-
-" Required:
-filetype plugin indent on
-
-" If you want to install not installed plugins on startup.
-if dein#check_install()
- call dein#install()
-endif
-
-"End dein Scripts-------------------------
-
-" Make neovim python binding available regardless from current virtualenv
-let g:python_host_prog=expand('~/.venv/neovim/bin/python')
-let g:python3_host_prog=expand('~/.venv/neovim3/bin/python')
-
-
-set grepprg="grep -nH $*"
-
-let mapleader=","
-let maplocalleader=','
-
-" basic
-set number
-set ruler
-set lbr
-set laststatus=2
-set hidden
-set modeline
-" allow backspacing over everything in insert mode
-set backspace=indent,eol,start
-
-set foldmethod=indent
-set foldcolumn=2
-
-" set terminal tab/window title to current filename
-set title
-
-" tabs
-set tabstop=2
-set shiftwidth=2
-set softtabstop=2
-set expandtab
-set list
-
-" show non printable chars an wrap
-set showbreak=↪\ 
-set listchars=tab:→\ ,trail:·,extends:⟩,precedes:⟨
-set sidescroll=1
-set nowrap
-
-" search
-set incsearch
-set hlsearch
-set ignorecase
-set smartcase
-
-" split
-set splitright
-
-set showcmd
-
-" command-t
-set wildignore+=*.zip,*.gz,*.bz2,*.xz,*.class
-let g:ctrlp_custom_ignore = '\v[\/](\.(git|hg|svn)|(vendor\/ruby|tmp|log|node_modules|bower_components))$'
+source $HOME/.vim/dein.vim
+source $HOME/.vim/general.vim
 
 " syntax
 autocmd BufEnter *.thtml,*.ctp set syntax=php
@@ -104,11 +27,6 @@ let b:Tex_SmartQuoteClose = "\"'"
 " mappings
 map <leader>a :A<cr>
 
-noremap <leader>r :!bundle exec rspec %<cr>
-nmap <leader>R :!bundle exec rspec spec<CR>
-
-map <leader>f <Plug>(ale_fix)
-
 nnoremap <leader>y "+yy
 vnoremap <leader>y "+y
 
@@ -117,20 +35,10 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
-" Tabularize
-
-vmap <leader>tab        :Tabularize /
-vmap <leader>tab=       :Tabularize /=<cr>
-vmap <leader>tab&       :Tabularize /&<cr>
-vmap <leader>tab.       :Tabularize /.<cr>
-vmap <leader>tab:       :Tabularize /:<cr>
-vmap <leader>tab,       :Tabularize /,<cr>
-vmap <leader>tab;       :Tabularize /;<cr>
-
 nnoremap gs :split 
 nnoremap gsv :vsplit 
-nnoremap gs<cr> :split<cr>
-nnoremap gsv<cr> :vsplit<cr>
+nnoremap gs<cr> :split\|Dirvish %<cr>
+nnoremap gsv<cr> :vsplit\|Dirvish %<cr>
 
 " show highlighting group under cursor when pressing F10
 map <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
@@ -143,36 +51,6 @@ noremap <leader><cr> :nohlsearch<cr>
 " markdown
 noremap <leader>m :QuickRun markdown<cr>
 
-set mouse=a
-set backup
-set undofile                "so is persistent undo ...
-set undolevels=1000         "maximum number of changes that can be undone
-set undoreload=10000        "maximum number lines to save for undo on a buffer reload
-
-if has('nvim')
-  set undodir=$HOME/.nvim/.cache/undo//
-  set backupdir=$HOME/.nvim/.cache/backup//
-  set directory=$HOME/.nvim/.cache/swap//
-  set viewdir=$HOME/.nvim/.cache/views//
-
-  silent execute '!mkdir -p $HOME/.nvim/.cache/backup'
-  silent execute '!mkdir -p $HOME/.nvim/.cache/swap'
-  silent execute '!mkdir -p $HOME/.nvim/.cache/views'
-  silent execute '!mkdir -p $HOME/.nvim/.cache/undo'
-else
-  set undodir=$HOME/.vim/.cache/undo//
-  set backupdir=$HOME/.vim/.cache/backup//
-  set directory=$HOME/.vim/swap//
-  set viewdir=$HOME/.vim/.cache/views//
-
-  silent execute '!mkdir -p $HOME/.vim/.cache/backup'
-  silent execute '!mkdir -p $HOME/.vim/.cache/swap'
-  silent execute '!mkdir -p $HOME/.vim/.cache/views'
-  silent execute '!mkdir -p $HOME/.vim/.cache/undo'
-endif
-
-au BufWinLeave * silent! mkview
-au BufWinEnter * silent! loadview
 
 let g:neocomplete#enable_at_startup = 1
 
@@ -180,9 +58,6 @@ let g:neocomplete#enable_at_startup = 1
 command! Gci Gcommit --verbose
 command! Gds Git diff --staged
 command! Gca Gcommit --amend
-
-map <leader>' :s/'/"/g 100000<cr>
-" END VIM RSPEC & CUCUMBER
 
 " For snippet_complete marker.
 if has('conceal')
@@ -217,14 +92,14 @@ let g:rainbow_conf = {
 \}
 
 
-" clojure
-nmap cx :Eval<cr>
-
 " text editing
 au BufEnter *.md,*.markdown,*.txt,*.tex,*.latex set textwidth=100
 au BufEnter *.md,*.markdown,*.txt set spelllang=en
 au BufEnter *.tex,*.latex set spelllang=de
 au BufEnter *.md,*.markdown,*.txt,*.tex,*.latex set spell
+
+set spell
+au FileType gitrebase set nospell
 
 " gradle == groovy
 au BufEnter *.gradle set ft=groovy
@@ -241,7 +116,6 @@ imap <c-z>, <c-y>,
 " Enable omni completion.
 autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
 autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
-"autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
 autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 
 au FileType gitcommit setlocal spell
@@ -256,59 +130,17 @@ let g:quickrun_config = {
 \   }
 \ }
 
-" syntastic
-let g:syntastic_coffee_checkers = ['coffee', 'coffeelint']
-let g:syntastic_javascript_checkers = ['jshint', 'eslint']
-let g:syntastic_always_populate_loc_list = 1
-"let g:syntastic_javscript_eslint_exec = '/Users/ohcibi/.nvm/versions/node/v0.12.7/bin/eslint'
-
-function! RemoveC()
-  let r = confirm('Really Remove?', "&OK\n&Cancel")
-  if r == 1
-    execute "Remove"
-  endif
-endfunction
-
-map gr :call RemoveC()<cr>
-
 hi diffRemoved ctermfg=magenta cterm=bold
 hi diffAdded ctermfg=darkgreen cterm=bold
-set wildmenu
 
 " vim-json
 let g:vim_json_comments=1
-
-" deoplete
-if has('nvim')
-  let g:deoplete#enable_at_startup = 1
-  let g:deoplete#enable_smart_case = 1
-
-  if !exists('g:deoplete#omni_patterns')
-    let g:deoplete#omni_patterns = {}
-  endif
-  let g:deoplete#omni_patterns.javascript = '[^. *\t](=|\.)?\w*'
-  if !exists('g:deoplete#omni#functions')
-    let g:deoplete#omni#functions = {}
-  endif
-  let g:deoplete#omni#functions.javascript = [
-\   'tern#Complete'
-\ ]
-
-  let g:deoplete#sources = {}
-  let g:deoplete#sources['javascript.jsx'] = ['file', 'ultisnips', 'ternjs']
-
-" #let g:deoplete#file#enable_buffer_path = 1
-
-  set cot=longest,menuone,preview
-endif
 
 let g:tern_request_timeout = 1
 let g:tern_show_signature_in_pnum = '0'
 
 let g:tern#command = ["tern"]
 let g:tern#arguments = ["--persistent"]
-
-set diffopt+=vertical
 
 let g:UltiSnipsSnippetDirectories=["UltiSnips"]
 
@@ -330,12 +162,5 @@ fun ListNgGenerateCommands(ArgLead, CmdLine, CursorPos)
   return system('ng help generate | grep "[a-z]\+ <name" | sed -e "s/^[ \t]*//" | cut -f 1 -d " "')
 endfun
 
-
-set inccommand=nosplit
-
-set guicursor=n-v-c-sm:block,i-ci-ve:ver25-blinkon100,r-cr-o:hor20
-
-
-"set verbose=1
 runtime! vimrc.d/*.vim
 runtime! vimrc.local.d/*.vim
