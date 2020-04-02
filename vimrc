@@ -24,9 +24,6 @@ au FileType help set softtabstop=8
 let b:Tex_SmartQuoteOpen = '"`'
 let b:Tex_SmartQuoteClose = "\"'"
 
-" mappings
-map <leader>a :A<cr>
-
 nnoremap <leader>y "+yy
 vnoremap <leader>y "+y
 
@@ -47,10 +44,6 @@ map <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans
 
 "convenience
 noremap <leader><cr> :nohlsearch<cr>
-
-" markdown
-noremap <leader>m :QuickRun markdown<cr>
-
 
 let g:neocomplete#enable_at_startup = 1
 
@@ -123,18 +116,10 @@ au FileType gitcommit setlocal spelllang=en
 au FileType gitcommit setlocal colorcolumn=72
 au FileType gitcommit setlocal foldmethod=diff
 
-let g:quickrun_config = {
-\   'markdown': {
-\     'type': 'markdown/gfm',
-\     'outputter': 'browser'
-\   }
-\ }
-
 hi diffRemoved ctermfg=magenta cterm=bold
 hi diffAdded ctermfg=darkgreen cterm=bold
 
 " vim-json
-let g:vim_json_comments=1
 
 let g:tern_request_timeout = 1
 let g:tern_show_signature_in_pnum = '0'
@@ -143,24 +128,6 @@ let g:tern#command = ["tern"]
 let g:tern#arguments = ["--persistent"]
 
 let g:UltiSnipsSnippetDirectories=["UltiSnips"]
-
-" prettier
-let g:prettier#config#single_quote = 'false'
-let g:prettier#config#print_width = 100
-let g:prettier#config#trailing_comma = 'none'
-let g:prettier#config#bracket_spacing = 'true'
-
-command -nargs=* Ng e term://ng <args>
-command -nargs=* -complete=custom,ListNgServeOpts NgServe e term://ng serve <args>
-command -nargs=+ -complete=custom,ListNgGenerateCommands NgGenerate e term://ng generate <args>
-
-fun ListNgServeOpts(ArgLead, CmdLine, CursorPos)
-  return "--port "
-endfun
-
-fun ListNgGenerateCommands(ArgLead, CmdLine, CursorPos)
-  return system('ng help generate | grep "[a-z]\+ <name" | sed -e "s/^[ \t]*//" | cut -f 1 -d " "')
-endfun
 
 runtime! vimrc.d/*.vim
 runtime! vimrc.local.d/*.vim
