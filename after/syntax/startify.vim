@@ -1,6 +1,6 @@
 syntax match StartifyGitCommit /\vcommit [a-h0-9]{7,40}/ contained containedin=ALL
 syntax match StartifyGitCommitHash /\v\@?[a-h0-9]{7,40}/ contained containedin=ALL
-syntax match StartifySpecial /\v<empty buffer>|<quit>|\(.*$\)/ contains=StartifyGitCommitHash
+syntax match StartifySpecial /\v<empty buffer>|<quit>|\(.*\)$/ contains=StartifyGitCommitHash
 
 syn match StartifyGitAuthor /\vAuthor: .* <[^>]*>/ contained containedin=ALL skipwhite
 syn match StartifyGitAuthorKeyword /\vAuthor:/ contained containedin=StartifyGitAuthor
