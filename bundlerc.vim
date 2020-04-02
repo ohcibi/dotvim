@@ -21,6 +21,8 @@ call dein#add('Shougo/deoplete.nvim')
 call dein#add('Shougo/vimproc.vim', {'build': 'make'})
 call dein#add('Shougo/echodoc.vim')
 
+call dein#add('wsdjeg/dein-ui.vim')
+
 call dein#add('SirVer/ultisnips')
 call dein#add('honza/vim-snippets')
 call dein#add('honza/vim-clojure-conceal')
@@ -34,17 +36,15 @@ call dein#add('tomtom/tcomment_vim')
 call dein#add('godlygeek/tabular')
 
 call dein#add('bdmartin/vim-json')
-call dein#add('othree/yajs.vim', { 'merged': 0})
-call dein#add('othree/es.next.syntax.vim', { 'merged': 0})
+call dein#add('pangloss/vim-javascript', { 'merged': 0 })
 call dein#add('briancollins/vim-jst')
-call dein#add('kchmck/vim-coffee-script')
 
 call dein#add('hail2u/vim-css3-syntax')
 call dein#add('cakebaker/scss-syntax.vim')
 
 call dein#add('ervandew/supertab')
 
-call dein#add('nathanaelkane/vim-indent-guides')
+call dein#add('Yggdroot/indentLine')
 
 call dein#add('vim-airline/vim-airline')
 call dein#add('vim-airline/vim-airline-themes')
@@ -85,7 +85,6 @@ call dein#add('vim-scripts/groovy.vim')
 
 call dein#add('thinca/vim-quickrun')
 call dein#add('tyru/open-browser.vim')
-call dein#add('superbrothers/vim-quickrun-markdown-gfm')
 
 call dein#add('edkolev/tmuxline.vim')
 
@@ -102,8 +101,6 @@ call dein#add('editorconfig/editorconfig-vim')
 call dein#add('othree/html5.vim')
 
 call dein#add('rizzatti/dash.vim')
-
-call dein#add('isRuslan/vim-es6')
 
 call dein#add('heavenshell/vim-jsdoc')
 
@@ -124,7 +121,6 @@ call dein#add('HerringtonDarkholme/yats.vim')
 call dein#add('mhartington/nvim-typescript', { 'build': './install.sh' })
 
 call dein#add('Quramy/vim-js-pretty-template')
-
 
 call dein#add('justinmk/vim-dirvish')
 
@@ -161,3 +157,6 @@ call dein#add('ncm2/float-preview.nvim')
 call dein#add('cespare/vim-toml')
 
 call dein#add('neovim/nvim-lspconfig')
+
+call dein#add('iamcco/markdown-preview.nvim', { 'on_ft': ['markdown', 'pandoc.markdown', 'rmd' ],
+              \ 'build': 'sh -c "cd app && yarn install"' })
