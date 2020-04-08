@@ -48,12 +48,5 @@ set undofile                "so is persistent undo ...
 set undolevels=1000         "maximum number of changes that can be undone
 set undoreload=10000        "maximum number lines to save for undo on a buffer reload
 
-"set undodir=$HOME/.nvim/.cache/undo//
-set backupdir-=.
-"set directory=$HOME/.nvim/.cache/swap//
-"set viewdir=$HOME/.nvim/.cache/views//
-"
-"silent execute '!mkdir -p $HOME/.nvim/.cache/{backup,swap,views,undo}'
-
 au BufWinLeave * silent! mkview
 au BufWinEnter * silent! loadview
