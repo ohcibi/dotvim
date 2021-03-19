@@ -1,5 +1,8 @@
 set runtimepath^=~/.vim/dein/repos/github.com/Shougo/dein.vim
 
+let g:python3_host_prog=expand('~/.venv/neovim3/bin/python')
+let g:node_host_prog=expand('/Users/ohcibi/.volta/tools/image/packages/neovim/bin/neovim-node-host')
+
 if dein#load_state('~/.vim/dein/')
   call dein#begin('~/.vim/dein')
 
@@ -17,5 +20,3 @@ if dein#check_install()
  call dein#install()
 endif
 
-let g:python_host_prog=expand('~/.venv/neovim/bin/python')
-let g:python3_host_prog=expand('~/.venv/neovim3/bin/python')

@@ -3,9 +3,10 @@ let g:ale_linters_explicit = 1
 let g:ale_sign_error = '✘'
 let g:ale_sign_warning = '﹅'
 let g:ale_fixers = {
-      \ 'javascript': ['prettier', 'eslint', 'importjs'],
-      \ 'typescript': ['prettier', 'tslint'],
-      \ 'python': ['autopep8', 'yapf', 'isort']
+      \ 'html': ['tidy', 'prettier', 'remove_trailing_lines', 'trim_whitespace'],
+      \ 'javascript': ['eslint', 'remove_trailing_lines', 'trim_whitespace'],
+      \ 'typescript': ['eslint', 'remove_trailing_lines', 'trim_whitespace'],
+      \ 'python': ['autopep8', 'yapf', 'isort', 'remove_trailing_lines', 'trim_whitespace']
       \ }
 let g:ale_javascript_eslint_options = "--no-ignore"
 let g:ale_typescript_tslint_options = "--no-ignore"
@@ -15,9 +16,10 @@ let g:ale_html_tidy_options = "-config .tidyrc"
 let g:ale_python_pylint_options = "--rcfile=.pylintrc"
 let g:ale_python_pylint_change_directory=0
 
-au FileType javascript let b:ale_linters_ignore = ['tsserver']
 au FileType typescript let b:ale_linters = ['eslint', 'tsserver', 'tslint']
-au FileType html.handlebars let b:ale_linters = []
+au FileType javascript let b:ale_linters_ignore = ['tsserver']
+au FileType javascript let b:ale_linters = ['eslint']
+au FileType html,html.handlebars let b:ale_linters = ['embertemplatelint', 'write-good', 'prettier', 'tidy', 'alex', 'htmlhint']
 
 au FileType ale-preview set wrap
 
@@ -27,3 +29,12 @@ hi ALEErrorLine cterm=undercurl,italic gui=undercurl,italic guibg=#ffdddd
 hi ALEWarningLine cterm=italic gui=italic guibg=#ffffee
 
 map <leader>f <Plug>(ale_fix)
+
+if executable('typescript-language-server')
+  au User lsp_setup call lsp#register_server({
+        \ 'name': 'typescript-language-server',
+        \ 'cmd': {server_info->[&shell, &shellcmdflag, 'typescript-language-server --stdio']},
+        \ 'root_uri':{server_info->lsp#utils#path_to_uri(lsp#utils#find_nearest_parent_file_directory(lsp#utils#get_buffer_path(), 'tsconfig.json'))},
+        \ 'whitelist': ['typescript', 'typescript.tsx'],
+        \ })
+endif

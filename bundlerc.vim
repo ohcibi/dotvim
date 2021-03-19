@@ -157,3 +157,7 @@ call dein#add('rhysd/git-messenger.vim', {
             \ })
 
 call dein#add('ncm2/float-preview.nvim')
+
+call dein#add('cespare/vim-toml')
+
+call dein#add('neovim/nvim-lspconfig')
