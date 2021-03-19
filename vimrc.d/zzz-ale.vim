@@ -3,10 +3,16 @@ let g:ale_linters_explicit = 1
 let g:ale_sign_error = '✘'
 let g:ale_sign_warning = '﹅'
 let g:ale_fixers = {
+      \ 'javascript': ['prettier', 'eslint', 'importjs'],
+      \ 'javascript-ember': ['prettier', 'eslint', 'importjs'],
       \ 'html': ['tidy', 'prettier', 'remove_trailing_lines', 'trim_whitespace'],
       \ 'javascript': ['eslint', 'remove_trailing_lines', 'trim_whitespace'],
       \ 'typescript': ['eslint', 'remove_trailing_lines', 'trim_whitespace'],
       \ 'python': ['autopep8', 'yapf', 'isort', 'remove_trailing_lines', 'trim_whitespace']
+      \ }
+let g:ale_linters = {
+      \ 'javascript': ['eslint'],
+      \ 'handlebars': ['ember-template-lint']
       \ }
 let g:ale_javascript_eslint_options = "--no-ignore"
 let g:ale_typescript_tslint_options = "--no-ignore"
@@ -15,6 +21,9 @@ let g:ale_typescript_prettier_options = "--require-pragma false"
 let g:ale_html_tidy_options = "-config .tidyrc"
 let g:ale_python_pylint_options = "--rcfile=.pylintrc"
 let g:ale_python_pylint_change_directory=0
+
+let g:ale_virtualtext_cursor = 1
+let g:ale_virtualtext_prefix = '✘ '
 
 au FileType typescript let b:ale_linters = ['eslint', 'tsserver', 'tslint']
 au FileType javascript let b:ale_linters_ignore = ['tsserver']

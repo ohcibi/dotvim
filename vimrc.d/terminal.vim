@@ -7,20 +7,10 @@ if has('nvim')
   autocmd TermOpen * setlocal foldcolumn=0
   autocmd TermOpen * setlocal nospell
   autocmd TermOpen * setlocal nowrap
+  autocmd TermOpen * setlocal syntax=OFF
   autocmd TermOpen * setlocal statusline=%{get(b:,'term_title','')}
   autocmd TermOpen * setlocal titlestring=%{get(b:,'term_title','')}
-  autocmd TermOpen,BufEnter * call terminal#indent()
-
-  fun terminal#indent()
-    if &buftype == 'terminal'
-      IndentGuidesDisable
-      let w:airline_disabled=1
-
-    else
-      IndentGuidesEnable
-      let w:airline_disabled=0
-    endif
-  endfun
+  autocmd TermOpen,TermEnter * let w:airline_disabled=1
 
   nnoremap <leader>t :e term://
   nnoremap <leader>T :terminal<cr>
@@ -28,7 +18,7 @@ if has('nvim')
   nnoremap <leader>vT :vsplit +terminal<cr>
 
   tnoremap <C-space> <C-\><C-N>
-  tnoremap <leader><space> <C-\><C-N>
+  tnoremap <c-w>N <c-\><c-n>
   tnoremap <C-h> <C-\><C-N><C-w>h
   tnoremap <C-j> <C-\><C-N><C-w>j
   tnoremap <C-k> <C-\><C-N><C-w>k

@@ -44,7 +44,7 @@ call dein#add('cakebaker/scss-syntax.vim')
 
 call dein#add('ervandew/supertab')
 
-call dein#add('Yggdroot/indentLine')
+call dein#add('Yggdroot/indentLine', { 'merged': 0 })
 
 call dein#add('vim-airline/vim-airline')
 call dein#add('vim-airline/vim-airline-themes')
@@ -134,7 +134,7 @@ call dein#add('junegunn/fzf', { 'build': './install --bin' })
 
 call dein#add('junegunn/fzf.vim')
 
-call dein#add('junegunn/limelight.vim')
+call dein#add('junegunn/limelight.vim', { 'merged': 0 })
 
 call dein#add('junegunn/goyo.vim')
 
@@ -160,3 +160,9 @@ call dein#add('neovim/nvim-lspconfig')
 
 call dein#add('iamcco/markdown-preview.nvim', { 'on_ft': ['markdown', 'pandoc.markdown', 'rmd' ],
               \ 'build': 'sh -c "cd app && yarn install"' })
+
+if has('win32') || has('win64')
+  call dein#add('tbodt/deoplete-tabnine', { 'build': 'powershell.exe .\install.ps1' })
+else
+  call dein#add('tbodt/deoplete-tabnine', { 'build': './install.sh' })
+endif

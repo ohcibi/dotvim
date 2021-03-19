@@ -63,7 +63,7 @@ hi PreProc      gui=bold cterm=bold
 hi Include      gui=bold cterm=bold
 hi Function     gui=bold cterm=bold
 hi Statement    gui=bold cterm=bold
-hi Type         gui=bold cterm=bold
+hi Type         gui=bold,italic cterm=bold,italic
 hi Todo         gui=bold cterm=bold
 hi Special      gui=bold cterm=bold
 hi Label        gui=bold cterm=bold
@@ -72,20 +72,14 @@ hi Structure    gui=bold cterm=bold
 hi TypeDef      gui=bold cterm=bold
 hi TabLineSel   gui=bold cterm=bold
 hi vimCommand   gui=bold cterm=bold
+hi Operator     gui=bold cterm=bold
+hi Conceal      guibg=NONE gui=bold
+hi Conditional  gui=bold cterm=bold gui=bold cterm=bold guifg=#4271ae ctermfg=25
+exec "hi Special guifg=#" . s:purple
+exec "hi Conceal guifg=#" . s:foreground
 
 " php doc tags 💩
 hi phpDocTags term=None cterm=bold ctermfg=235 gui=bold guifg=#222288
 hi phpCommentTitle term=None cterm=bold ctermfg=240 gui=bold guifg=#2233AA
 hi phpDocParam cterm=NONE ctermfg=240 gui=NONE guifg=#222255
 hi phpDocIdentifier cterm=NONE ctermfg=240 gui=bold guifg=#333388
-
-" javascript
-exec "hi Special guifg=#" . s:green
-hi javascriptParens guifg=#770000
-hi! link javascriptObjectMethodName Function
-hi! link javascriptBraces Function
-hi! link javascriptIdentifier Identifier
-hi! link javascriptIdentifierName Identifier
-hi! link javascriptDecoratorFuncName Function
-hi! link javascriptDecorator Operator
-hi! link javascriptDecoratorParens javascriptParens

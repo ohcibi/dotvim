@@ -1,8 +1,8 @@
-let s:git_files = split(system('git ls-files 2> /dev/null'), '\n')
+let s:git_files = split(vimproc#system('git ls-files 2> /dev/null'), '\n')
 
 function! GitEntryInformation(path)
   if (index(s:git_files, a:path) >= 0)
-    return "(". trim(system('git log -n 1 --pretty="@%h from %cr" --abbrev-commit -- '. a:path)) .")"
+    return "(". trim(vimproc#system('git log -n 1 --pretty="@%h from %cr" --abbrev-commit -- '. a:path)) .")"
   endif
 
   return ""
@@ -23,7 +23,7 @@ if (len(s:git_files) > 0)
     let g:startify_custom_header = []
    endif
   let g:startify_custom_header =
-    \ startify#pad(split(system('git show -s --pretty=short HEAD | cowsay -n -w'), '\n'))
+    \ startify#pad(split(vimproc#system('git show -s --pretty=short HEAD | cowsay -n -w'), '\n'))
 endif
 
 let g:startify_skiplist = [
@@ -65,8 +65,10 @@ let g:startify_session_savecmds = [
        \ 'Startify'
        \ ]
 
-au FileType startify IndentGuidesDisable
+"au FileType startify IndentLinesDisable
 au FileType startify hi! EndOfBuffer ctermbg=bg ctermfg=bg guibg=bg guifg=bg
 au FileType startify setlocal nocursorline
 au User Startified setlocal nocursorline
-au User Startified IndentGuidesDisable
+"au User Startified IndentLinesDisable
+
+let g:indent_guides_exclude_filetypes = ['startify']

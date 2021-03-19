@@ -15,9 +15,18 @@ augroup javascript_folding
     au FileType javascript setlocal foldmethod=syntax
 augroup END
 
-let g:javascript_conceal_function             = "ƒ"
-let g:javascript_conceal_return               = "﬌"
-let g:javascript_conceal_arrow_function       = ""
+let g:javascript_conceal_function       = ""
+let g:javascript_conceal_return         = "﬌"
+let g:javascript_conceal_arrow_function = ""
+let g:javascript_conceal_spread         = "⋯"
+let g:javascript_conceal_not            = "¬"
+let g:javascript_conceal_times          = ""
+let g:javascript_conceal_div            = "÷"
+let g:javascript_conceal_and            = "⋏"
+let g:javascript_conceal_or             = "⋎"
+let g:javascript_conceal_true           = "⊨"
+let g:javascript_conceal_false          = "⊭"
+" ×
 
 " tern
 

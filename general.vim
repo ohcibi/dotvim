@@ -20,15 +20,13 @@ set expandtab
 set list
 
 set showbreak=↪\
-set listchars=tab:→\ ,trail:·,extends:⟩,precedes:⟨
+set listchars=tab:→\ ,trail:·,extends:⟩,precedes:⟨,conceal:_
 set sidescroll=1
 set nowrap
 set splitright
 set noea
 set diffopt+=vertical
 set inccommand=nosplit
-
-
 
 set incsearch
 set hlsearch
@@ -44,9 +42,12 @@ set backspace=indent,eol,start
 
 set mouse=a
 set backup
+set backupdir-=.
 set undofile                "so is persistent undo ...
 set undolevels=1000         "maximum number of changes that can be undone
 set undoreload=10000        "maximum number lines to save for undo on a buffer reload
 
 au BufWinLeave * silent! mkview
 au BufWinEnter * silent! loadview
+
+language en_US
