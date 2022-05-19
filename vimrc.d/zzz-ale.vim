@@ -3,11 +3,8 @@ let g:ale_linters_explicit = 1
 let g:ale_sign_error = '✘'
 let g:ale_sign_warning = '﹅'
 let g:ale_fixers = {
-      \ 'javascript': ['prettier', 'eslint', 'importjs'],
-      \ 'javascript-ember': ['prettier', 'eslint', 'importjs'],
       \ 'html': ['tidy', 'prettier', 'remove_trailing_lines', 'trim_whitespace'],
       \ 'javascript': ['eslint', 'remove_trailing_lines', 'trim_whitespace'],
-      \ 'typescript': ['eslint', 'remove_trailing_lines', 'trim_whitespace'],
       \ 'python': ['autopep8', 'yapf', 'isort', 'remove_trailing_lines', 'trim_whitespace']
       \ }
 let g:ale_linters = {
@@ -28,7 +25,7 @@ let g:ale_virtualtext_prefix = '✘ '
 au FileType typescript let b:ale_linters = ['eslint', 'tsserver', 'tslint']
 au FileType javascript let b:ale_linters_ignore = ['tsserver']
 au FileType javascript let b:ale_linters = ['eslint']
-au FileType html,html.handlebars let b:ale_linters = ['embertemplatelint', 'write-good', 'prettier', 'tidy', 'alex', 'htmlhint']
+au FileType html,html.handlebars let b:ale_linters = ['embertemplatelint', 'write-good', 'prettier', 'alex']
 
 au FileType ale-preview set wrap
 

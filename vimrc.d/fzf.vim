@@ -23,7 +23,7 @@ command! -bang -nargs=* Ag
 let g:fzf_layout = { 'down': '~30%' }
 
 function InsertEmoji(selected)
-	$put=substitute(a:selected,'^\\s*\(.\).*$','\1','i')
+	$put=substitute(a:selected,'^\(.\).*$','\\1','i')
 endfunction
 
 map <c-e> :call fzf#run(fzf#wrap({'source': 'gitmoji -l', 'sink': function('InsertEmoji')}))<cr>

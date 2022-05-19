@@ -1,5 +1,11 @@
 let s:git_files = split(vimproc#system('git ls-files 2> /dev/null'), '\n')
 
+let g:startify_change_to_dir = 1
+let g:startify_change_to_vcs_root = 1
+let g:startify_fortune_use_unicode = 1
+let g:startify_files_number = 5
+let g:startfy_session_autoload = 1
+
 function! GitEntryInformation(path)
   if (index(s:git_files, a:path) >= 0)
     return "(". trim(vimproc#system('git log -n 1 --pretty="@%h from %cr" --abbrev-commit -- '. a:path)) .")"
@@ -12,11 +18,29 @@ function! StartifyEntryFormat()
   return "WebDevIconsGetFileTypeSymbol(absolute_path) .' '. entry_path . ' '. GitEntryInformation(entry_path)"
 endfunction
 
-let g:startify_change_to_dir = 1
-let g:startify_change_to_vcs_root = 1
-let g:startify_fortune_use_unicode = 1
-let g:startify_files_number = 5
-let g:startfy_session_autoload = 1
+function! s:list_commits()
+  if (len(s:git_files) == 0)
+    return []
+  endif
+
+  let git = 'git'
+  let commits = systemlist(git .' log --oneline | head -n' . g:startify_files_number)
+  let git = 'G'. git[1:]
+  return map(commits, '{"line": matchstr(v:val, "\\s\\zs.*"), "cmd": "'. git .' show ". matchstr(v:val, "^\\x\\+") }')
+endfunction
+
+" function! s:list_mrs()
+"   if (len(s:git_files) == 0)
+"     return []
+"   endif
+"
+"   let git = 'git'
+"   let glab = 'glab'
+"   let branch = system(git . ' branch --show-current')
+"   let mrs = systemlist(glab .' mr list -s ' . branch . ' --per-page 10')
+"   let git = 'G'. git[1:]
+"   return map(mrs, '{"line": matchstr(v:val, "\\s\\zs.*"), "cmd": "'. glab .' mr checkout -t ". matchstr(v:val, "^\\x\\+") }')
+" endfunction
 
 if (len(s:git_files) > 0)
   if (!exists('g:startify_custom_header'))
@@ -53,16 +77,23 @@ let g:startify_commands = [
     \ {'!Q': [' Exit Vim not saving any buffer', ':qa!']},
     \ ]
 
+"      \ { 'header': ['   '], 'type': function('s:list_mrs') },
 let g:startify_lists = [
-      \ { 'type': 'dir', 'header': ['       '. getcwd()] },
-      \ { 'type': 'files', 'header': ['    '] },
       \ { 'type': 'sessions', 'header': ['   廊'] },
+      \ { 'type': 'dir', 'header': ['       '. getcwd()] },
+      \ { 'header': ['   '], 'type': function('s:list_commits') },
+      \ { 'type': 'files', 'header': ['    '] },
       \ { 'type': 'bookmarks', 'header': ['   '] },
       \ { 'type': 'commands', 'header': ['   ﲵ'] },
       \ ]
 
 let g:startify_session_savecmds = [
        \ 'Startify'
+       \ ]
+
+let g:startify_session_savevars = [
+       \ 'g:startify_session_savevars',
+       \ 'g:startify_session_savecmds'
        \ ]
 
 "au FileType startify IndentLinesDisable

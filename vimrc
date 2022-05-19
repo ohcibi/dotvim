@@ -10,7 +10,7 @@ source $HOME/.vim/general.vim
 " Remote plugin hosts
 let g:python_host_prog=expand('~/.venv/neovim/bin/python')
 let g:python3_host_prog=expand('~/.venv/neovim3/bin/python')
-let g:node_host_prog=expand('~/.volta/tools/image/packages/neovim/4.8.0/bin/cli.js')
+let g:node_host_prog=expand('~/.volta/tools/image/packages/neovim/bin/neovim-node-host')
 
 " make use real tabs
 au FileType make set noexpandtab

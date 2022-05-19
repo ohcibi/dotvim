@@ -160,9 +160,3 @@ call dein#add('neovim/nvim-lspconfig')
 
 call dein#add('iamcco/markdown-preview.nvim', { 'on_ft': ['markdown', 'pandoc.markdown', 'rmd' ],
               \ 'build': 'sh -c "cd app && yarn install"' })
-
-if has('win32') || has('win64')
-  call dein#add('tbodt/deoplete-tabnine', { 'build': 'powershell.exe .\install.ps1' })
-else
-  call dein#add('tbodt/deoplete-tabnine', { 'build': './install.sh' })
-endif
